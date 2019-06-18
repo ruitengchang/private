@@ -4,14 +4,23 @@ image_process.py
 程序针对情景1进行，（情景1：背景为白色，拼接图片之间有缝隙 (如果是图片和文字拼接而成，比如，图片左边配上了文字，只需要分割出图片部分，文字部分需要过滤掉)
 整体思路：
 原图：
+
 ![Image text](https://github.com/ruitengchang/image_process/blob/master/white.jpg)
+
 1.读取图片，讲图片中所有非背景区域设为黑色，背景区域设为白色
+
 ![Image text](https://github.com/ruitengchang/image_process/blob/master/white.jpg)
+
 2.利用边缘检测和霍夫变换检测图片中的黑色区域，并画出黑色部分的边界
+
 ![Image text](https://github.com/ruitengchang/image_process/blob/master/result.jpg)
+
 3.通过黑色部分的边界得到矩形顶点，使用顶点讲图片切割出来
+
 ![Image text](https://github.com/ruitengchang/image_process/blob/master/new1.jpg)
+
 ![Image text](https://github.com/ruitengchang/image_process/blob/master/new0.jpg)
+
 
 该方法不能用在庆幸2上，因为算法中是通过白素背景进行区分照片的，情形而当中没有白色背景，无法区分。
 对于情形3，不是拼接图片的情况，也能够使用该算法。
